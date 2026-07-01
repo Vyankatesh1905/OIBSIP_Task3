@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert temperature between Celsius, Fahrenheit, and Kelvin instantly.">
+  <title>Temperature Converter</title>
+
+  <!-- Google Font - Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <header class="header">
+      <h1>Temperature Converter</h1>
+      <p class="subtitle">Convert between Celsius, Fahrenheit, and Kelvin</p>
+    </header>
+
+    <!-- Converter Card -->
+    <section class="converter-card">
+      <div class="form-group">
+        <label for="temperature">Enter Temperature</label>
+        <input
+          type="text"
+          id="temperature"
+          placeholder="e.g. 25"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="dropdown-row">
+        <div class="form-group">
+          <label for="convertFrom">Convert From</label>
+          <select id="convertFrom">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="convertTo">Convert To</label>
+          <select id="convertTo">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit" selected>Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button type="button" id="convertBtn" class="btn btn-primary">Convert</button>
+        <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
+      </div>
+
+      <!-- Error Message -->
+      <p id="errorMessage" class="error-message" role="alert"></p>
+
+      <!-- Result Card -->
+      <div id="resultCard" class="result-card hidden">
+        <p class="result-label">Conversion Result</p>
+        <p id="resultText" class="result-text"></p>
+        <div class="result-details">
+          <span id="originalTemp"></span>
+          <span class="arrow">→</span>
+          <span id="convertedTemp"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversion History -->
+    <section class="history-section">
+      <h2>Recent Conversions</h2>
+      <ul id="historyList" class="history-list">
+        <li class="history-empty">No conversions yet</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
